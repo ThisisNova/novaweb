@@ -9,6 +9,9 @@ import {
   ArrowUpRight,
   Sparkles,
   Mail,
+  Code2,
+  MonitorSmartphone,
+  ServerCog,
 } from "lucide-react";
 const Button = ({ children, className = "", variant = "default", size, ...props }) => {
   const base = "inline-flex items-center justify-center transition disabled:pointer-events-none disabled:opacity-50";
@@ -35,38 +38,54 @@ const fadeUp = {
 
 const releases = [
   {
-    title: "Neon Horizon",
-    type: "Single",
-    mood: "Progressive / Cinematic EDM",
+    title: "Pearl Harmonics",
+    type: "Signature Identity",
+    mood: "Futuristic / Emotional / Cinematic EDM",
   },
   {
-    title: "Afterglow Signals",
-    type: "Concept Track",
-    mood: "Melodic / Future Bass",
+    title: "Nova Signal 01",
+    type: "Concept Release",
+    mood: "Progressive / Festival Energy",
   },
   {
-    title: "Island Frequency",
-    type: "Sound Design Reel",
-    mood: "Electronic / Sri Lankan Texture",
+    title: "Afterglow Protocol",
+    type: "Visual Track",
+    mood: "Melodic / Dark Electronic",
   },
 ];
 
 const services = [
   {
     icon: Music2,
-    title: "Original Music",
-    text: "Electronic tracks built with cinematic emotion, powerful drops, and futuristic textures.",
+    title: "Music Releases",
+    text: "Original tracks, remixes, concept releases, and cinematic electronic productions under the RAVINOVA identity.",
   },
   {
     icon: Headphones,
-    title: "Sound Design",
-    text: "Custom synths, atmospheres, impacts, risers, transitions, and sonic branding elements.",
+    title: "Pearl Harmonics",
+    text: "Your signature sonic world: emotional harmonies, futuristic textures, and sound design built around your artist DNA.",
   },
   {
     icon: Radio,
-    title: "Mixing Direction",
-    text: "Clean, modern, club-ready sonic balance for releases, reels, and performance content.",
+    title: "EPK & Booking",
+    text: "A clean professional hub for labels, promoters, collaborators, press, and event bookings.",
   },
+];
+
+const universe = [
+  "Nova Signals",
+  "Pearl Harmonics",
+  "Visual Worlds",
+  "Creative Tech",
+];
+
+const techStack = [
+  "React",
+  "Tailwind CSS",
+  "Node.js",
+  "APIs",
+  "UI/UX",
+  "Full-Stack Web",
 ];
 
 export default function RavinovaLandingPage() {
@@ -230,16 +249,100 @@ export default function RavinovaLandingPage() {
       <section id="about" className="relative z-10 border-y border-white/10 bg-white/[0.03] py-24 backdrop-blur">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-purple-300">The Artist</p>
-            <h2 className="mt-3 text-4xl font-black tracking-[-0.06em] md:text-6xl">Built for emotion, energy, and impact.</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-purple-300">RAVINOVA Universe</p>
+            <h2 className="mt-3 text-4xl font-black tracking-[-0.06em] md:text-6xl">A world around sound, visuals, and identity.</h2>
           </div>
           <div className="space-y-6 text-lg leading-8 text-white/65">
             <p>
-              RAVINOVA is an electronic music identity focused on futuristic sound, cinematic atmosphere, and strong visual storytelling. The project blends EDM production, sound design, and performance-ready energy into one focused artist brand.
+              RAVINOVA is not just a portfolio. It is an artist universe built around futuristic electronic music, Pearl Harmonics, cinematic visuals, and live-performance energy.
             </p>
             <p>
-              This landing page can become the front door for bookings, collaborations, press kits, releases, music videos, and creative work connected to RAVINOVA.
+              The direction combines a strong fan-world concept with a clean professional DJ/producer platform for releases, bookings, EPK, videos, and future merch.
             </p>
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              {universe.map((item) => (
+                <div key={item} className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm font-bold uppercase tracking-widest text-white/70">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+        <div className="grid gap-5 lg:grid-cols-4">
+          <div className="rounded-[2rem] border border-cyan-300/20 bg-cyan-300/10 p-7 lg:col-span-2">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-cyan-200">Featured Release</p>
+            <h2 className="mt-4 text-4xl font-black tracking-[-0.06em] md:text-5xl">Pearl Harmonics</h2>
+            <p className="mt-4 max-w-2xl leading-7 text-white/60">
+              Use this section for your newest track, upcoming release, music video, or main identity statement. This should become the first serious music highlight on the site.
+            </p>
+            <Button className="mt-7 h-12 rounded-full bg-white px-6 font-bold text-black hover:bg-cyan-200">
+              Play Featured Track
+              <Play className="ml-2 h-4 w-4 fill-black" />
+            </Button>
+          </div>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-purple-200">For Fans</p>
+            <h3 className="mt-4 text-2xl font-black">Join the Signal</h3>
+            <p className="mt-4 text-sm leading-6 text-white/55">Future fan signup, exclusive drops, behind-the-scenes, and early release access.</p>
+          </div>
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-red-200">For Industry</p>
+            <h3 className="mt-4 text-2xl font-black">Book / EPK</h3>
+            <p className="mt-4 text-sm leading-6 text-white/55">Professional contact point for labels, events, brands, media, and collaborations.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="tech" className="relative z-10 mx-auto max-w-7xl px-6 py-24">
+        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-cyan-300">Creative Technology</p>
+            <h2 className="mt-3 text-4xl font-black tracking-[-0.06em] md:text-6xl">Full‑Stack Developer</h2>
+          </div>
+          <p className="max-w-xl text-white/55">
+            Beyond music, RAVINOVA also builds digital products, artist websites, creative platforms, and modern web experiences.
+          </p>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 backdrop-blur">
+            <div className="mb-6 grid h-14 w-14 place-items-center rounded-2xl bg-cyan-300/10">
+              <Code2 className="h-7 w-7 text-cyan-200" />
+            </div>
+            <h3 className="text-3xl font-black tracking-[-0.05em]">Music meets software.</h3>
+            <p className="mt-4 leading-7 text-white/55">
+              This section presents your technical side without breaking the artist brand: full-stack development, frontend design, backend logic, APIs, and digital systems for creative businesses.
+            </p>
+            <Button className="mt-7 h-12 rounded-full bg-white px-6 font-bold text-black hover:bg-cyan-200">
+              View Developer Work
+              <ArrowUpRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="rounded-[2rem] border border-white/10 bg-black/30 p-7">
+              <MonitorSmartphone className="h-8 w-8 text-purple-200" />
+              <h4 className="mt-5 text-xl font-black">Frontend Experiences</h4>
+              <p className="mt-3 text-sm leading-6 text-white/55">Responsive websites, landing pages, interfaces, artist portfolios, and brand-focused UI systems.</p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-black/30 p-7">
+              <ServerCog className="h-8 w-8 text-red-200" />
+              <h4 className="mt-5 text-xl font-black">Backend Systems</h4>
+              <p className="mt-3 text-sm leading-6 text-white/55">APIs, dashboards, database-connected apps, booking systems, admin panels, and automation flows.</p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-black/30 p-7 md:col-span-2">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/45">Current Stack</p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                {techStack.map((item) => (
+                  <span key={item} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/70">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
